@@ -47,9 +47,22 @@ app.get('/logout', auth, async (req, res) => {
     try {
         //to delete one only current user
 
-        // req.details.tokens = req.details.tokens.filter((currElem) => {
-        //     return currElem.token !== req.token
-        // })
+        req.details.tokens = req.details.tokens.filter((currElem) => {
+            return currElem.token !== req.token
+        })
+
+
+
+        res.clearCookie("jwt");
+
+        await req.details.save();
+        res.render("login");
+    } catch (err) {
+        res.status(500).send(err);
+    }
+});
+app.get('/logoutall', auth, async (req, res) => {
+    try {
 
         //logout all user
         req.details.tokens = [];
