@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {{>header}}
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    {{>navbar}}
+    <div class="container">
+        <div class="row my-5">
+            <div class="col-sm-6 col-md-4 mx-auto">
+                <h1 class="text-center login-title my-5">Employee Login Form</h1>
+                <div class="account-wall">
+                    <img class="profile-img"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR11KIfQhZ73rRV95e7Y3j69NFzETlq-iUr0g&usqp=CAU"
+                        alt="" />
+                    <form class="form-signin" action="/login" method="POST">
+                        <input type="email" class="form-control" placeholder="Email" required name="email" />
+                        <input type="password" class="form-control" placeholder="Password" required name="password" />
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                        <label class="checkbox pull-left mt-3">
+                            <input type="checkbox" value="remember-me" />
+                            Remember me
+                        </label>
+                        <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
+                    </form>
+                </div>
+                <a href="/registeration" class="text-center new-account">Create an account</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
